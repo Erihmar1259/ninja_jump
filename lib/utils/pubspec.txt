@@ -1,0 +1,8 @@
+  cupertino_icons: ^1.0.2
+  path: ^1.8.3
+  get:
+  get_storage:
+  flutter_screenutil:
+  loading_indicator:
+  loading_animation_widget:
+  webview_flutter:

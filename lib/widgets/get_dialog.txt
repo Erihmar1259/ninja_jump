@@ -1,0 +1,36 @@
+Get.defaultDialog(
+      barrierDismissible: false,
+      backgroundColor: whiteColor,
+      confirm: GestureDetector(
+        onTap: () {
+          print("Confirm work");
+          wordCount.value += 1;
+          var bestScore = box.read("score") ?? 0;
+          if (wordCount.value > bestScore) {
+            box.write("score", wordCount.value);
+          } else {}
+          Get.back();
+          initWords(homeController.hangmanWords);
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+          decoration: BoxDecoration(
+              color: secondaryColor,borderRadius: BorderRadius.circular(10.r)
+          ),
+          child: CustomText(
+            text: 'next'.tr,
+            fontSize: 14.sp,
+            color: whiteColor,
+          ),
+        ),
+      ),
+      title: 'congratulation'.tr,
+      titleStyle: TextStyle(
+          fontSize: 15.sp
+      ),
+      content: CustomText(
+        text: word.value,
+        color: green,
+        fontSize: 16.sp,
+      ),
+    );
